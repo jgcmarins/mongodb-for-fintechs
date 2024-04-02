@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo1-persistent-storage
+  namespace: woovi-mongo-dev
+spec:
+  storageClassName: 'microk8s-hostpath'
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi

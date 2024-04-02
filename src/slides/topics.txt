@@ -1,0 +1,23 @@
+divide into 5 parts:
+
+# setup & infrastructure
+1. self-hosted (k8s)
+2. replica set
+
+# high availability mongodb
+3. hidden mongo
+4. backup service (docker)
+5. migration service (docker)
+6. migration strategies: cursorProcessingBatch, cursorChunkBulkWrite, etc
+
+# show don't tell
+7. multi tenant e multi database
+8. ledger (idempotencyID + conditional put)
+9. publisher (change streams)
+10. automated tests for ixscan with explain
+11. read primary on jobs (eventual consistency)
+12. data analysis: cube + materialized views (measures + dimensions)
+13. index (common problems solver with index)
+
+# references
+# thanks

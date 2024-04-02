@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: mongodb1
+  name: mongodb1
+  namespace: woovi-mongo-dev
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      name: mongodb1
+      mongo: node
+  template:
+    metadata:
+      labels:
+        name: mongodb1
+        mongo: node
+    spec:
+      hostname: mongodb1
+      containers:
+        - image: mongo:7.0.2
+          name: mongo
+          command:
+            - mongod
+            - '--replSet'
+            - rs0
+            - '--bind_ip_all'
+          ports:
+            - name: mongodb
+              containerPort: 27017
+          resources:
+            requests:
+              cpu: 1500m
+              memory: 9Gi
+            limits:
+              cpu: 2500m
+              memory: 9Gi
+          livenessProbe:
+            exec:
+              command:
+                - mongosh
+                - --eval
+                - "db.adminCommand('ping')"
+            initialDelaySeconds: 180
+            periodSeconds: 300
+            timeoutSeconds: 10
+          volumeMounts:
+            - name: mongo-storage
+              mountPath: /data/db
+      volumes:
+        - name: mongo-storage
+          persistentVolumeClaim:
+            claimName: mongo1-persistent-storage

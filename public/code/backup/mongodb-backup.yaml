@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: mongodb-backup-woovi-s3
+  namespace: woovi-mongo-dev
+spec:
+  schedule: '5 */3 * * *'
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: mongodb-backup-s3
+              image: entria/mongodb-backup-docker:latest
+              env:
+                - name: MONGO_URI
+                  value: mongodb://mongodb1.woovi-mongo-dev/woovi-dev?replicaSet=rs0&readPreference=secondary
+              resources:
+                requests:
+                  cpu: 500m
+                limits:
+                  cpu: 1500m
+          restartPolicy: Never
