@@ -13,7 +13,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 // @TODO: make social links, profile image and QRCode link dynamic
 const Whoami = ({
   title = 'João Marins',
-  description = 'Full-Stack Engineer, Entrepreneur, Angel Investor and Open Source Maintainer',
+  description = 'Software Engineer, Entrepreneur, Angel Investor and Open Source Maintainer',
 }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
