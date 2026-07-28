@@ -13,16 +13,16 @@
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^9.0.1",
-    "@mui/material": "^9.0.1",
-    "@mui/material-nextjs": "^9.0.1",
-    "@next/third-parties": "^16.2.6",
-    "framer-motion": "^12.40.0",
-    "next": "16.2.6",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "@mui/icons-material": "^9.2.0",
+    "@mui/material": "^9.2.0",
+    "@mui/material-nextjs": "^9.1.1",
+    "@next/third-parties": "^16.2.12",
+    "framer-motion": "^12.42.2",
+    "next": "16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "react-syntax-highlighter": "^16.1.1",
-    "swr": "^2.4.1"
+    "swr": "^2.4.2"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
@@ -34,14 +34,14 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^25.9.1",
-    "@types/react": "^19.2.15",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "eslint": "^10.4.1",
-    "eslint-config-next": "16.2.6",
+    "eslint": "^10.8.0",
+    "eslint-config-next": "16.2.12",
     "husky": "^9.1.7",
-    "lint-staged": "^17.0.6",
-    "prettier": "^3.8.3",
-    "typescript": "^6.0.3"
+    "lint-staged": "^17.2.0",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
   }
 }
